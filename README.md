@@ -1,4 +1,4 @@
-<img src="./img/pygeologist.jpeg" width="200"/>
+<img src="https://github.com/erebus-mre/Geostats_Code/blob/main/pygeologist.jpeg" width="200"/>
 
 # Geostats_Code
 
