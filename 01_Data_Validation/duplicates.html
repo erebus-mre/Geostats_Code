@@ -3060,6 +3060,7 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#exact-duplicates" id="toc-exact-duplicates" class="nav-link active" data-scroll-target="#exact-duplicates"><span class="header-section-number">1</span> Exact Duplicates</a></li>
   <li><a href="#partial-duplicates" id="toc-partial-duplicates" class="nav-link" data-scroll-target="#partial-duplicates"><span class="header-section-number">2</span> Partial Duplicates</a></li>
+  <li><a href="#close-collars" id="toc-close-collars" class="nav-link" data-scroll-target="#close-collars"><span class="header-section-number">3</span> Close Collars</a></li>
   </ul>
 </nav>
 </div>
@@ -3078,7 +3079,7 @@ vertical-align: -.125em;
 <li>partial duplicates</li>
 <li>and ‘near’ duplicates</li>
 </ul>
-<div class="cell" data-execution_count="60">
+<div class="cell" data-execution_count="68">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import libraries</span></span>
@@ -3110,37 +3111,37 @@ vertical-align: -.125em;
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>DH-1</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>89.0</td>
+<td>-0.932096</td>
+<td>-1.026137</td>
+<td>97.937086</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>DH-2</td>
-<td>10.0</td>
-<td>0.0</td>
-<td>85.0</td>
+<td>9.439632</td>
+<td>0.554131</td>
+<td>117.312559</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>DH-3</td>
-<td>20.0</td>
-<td>0.0</td>
-<td>89.0</td>
+<td>17.622817</td>
+<td>1.012468</td>
+<td>105.339303</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>DH-4</td>
-<td>30.0</td>
-<td>0.0</td>
-<td>83.0</td>
+<td>30.031428</td>
+<td>-0.423953</td>
+<td>109.858463</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>DH-5</td>
-<td>40.0</td>
-<td>0.0</td>
-<td>88.0</td>
+<td>38.771637</td>
+<td>0.830514</td>
+<td>90.951326</td>
 </tr>
 </tbody>
 </table>
@@ -3152,7 +3153,7 @@ vertical-align: -.125em;
 <h1 data-number="1"><span class="header-section-number">1</span> Exact Duplicates</h1>
 <p>Exact duplicates are rows that are identical in all columns.</p>
 <p>These are easily identified using the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html"><code>duplicated()</code></a> method in <code>pandas</code>:</p>
-<div class="cell" data-execution_count="61">
+<div class="cell" data-execution_count="69">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Find exact duplicates</span></span>
@@ -3160,12 +3161,12 @@ vertical-align: -.125em;
 </details>
 </div>
 <p>The method returns a series of boolean values, where <code>True</code> indicates that the row is one member of a duplicate pair.</p>
-<div class="cell" data-execution_count="62">
+<div class="cell" data-execution_count="70">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>dups.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="70">
 <pre><code>0    False
 1    False
 2    False
@@ -3175,7 +3176,7 @@ dtype: bool</code></pre>
 </div>
 </div>
 <p>This series can then be used to filter the original data frame to show only the duplicate rows.</p>
-<div class="cell" data-execution_count="63">
+<div class="cell" data-execution_count="71">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>duplicates <span class="op">=</span> collars[dups].sort_values(by <span class="op">=</span> <span class="st">&#39;dhid&#39;</span>)</span>
@@ -3197,74 +3198,74 @@ dtype: bool</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">99</td>
-<td>DH-100</td>
-<td>0.0</td>
-<td>90.0</td>
-<td>83.0</td>
+<td data-quarto-table-cell-role="th">23</td>
+<td>DH-24</td>
+<td>9.577436</td>
+<td>20.124624</td>
+<td>106.695154</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">122</td>
-<td>DH-100</td>
-<td>0.0</td>
-<td>90.0</td>
-<td>83.0</td>
+<td>DH-24</td>
+<td>9.577436</td>
+<td>20.124624</td>
+<td>106.695154</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">112</td>
-<td>DH-113</td>
-<td>20.0</td>
-<td>100.0</td>
-<td>88.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">121</td>
-<td>DH-113</td>
-<td>20.0</td>
-<td>100.0</td>
-<td>88.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">30</td>
-<td>DH-31</td>
-<td>80.0</td>
-<td>20.0</td>
-<td>80.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">125</td>
-<td>DH-31</td>
-<td>80.0</td>
-<td>20.0</td>
-<td>80.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">51</td>
-<td>DH-52</td>
-<td>70.0</td>
-<td>40.0</td>
-<td>82.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">123</td>
-<td>DH-52</td>
-<td>70.0</td>
-<td>40.0</td>
-<td>82.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">81</td>
-<td>DH-82</td>
-<td>40.0</td>
-<td>70.0</td>
-<td>88.0</td>
+<td data-quarto-table-cell-role="th">77</td>
+<td>DH-78</td>
+<td>-0.477881</td>
+<td>73.579353</td>
+<td>98.294610</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">124</td>
-<td>DH-82</td>
-<td>40.0</td>
-<td>70.0</td>
-<td>88.0</td>
+<td>DH-78</td>
+<td>-0.477881</td>
+<td>73.579353</td>
+<td>98.294610</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">80</td>
+<td>DH-81</td>
+<td>31.380224</td>
+<td>69.606047</td>
+<td>101.537821</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">125</td>
+<td>DH-81</td>
+<td>31.380224</td>
+<td>69.606047</td>
+<td>101.537821</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">84</td>
+<td>DH-85</td>
+<td>69.071556</td>
+<td>68.889773</td>
+<td>103.010377</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">121</td>
+<td>DH-85</td>
+<td>69.071556</td>
+<td>68.889773</td>
+<td>103.010377</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">98</td>
+<td>DH-99</td>
+<td>100.071209</td>
+<td>78.464094</td>
+<td>100.010050</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">123</td>
+<td>DH-99</td>
+<td>100.071209</td>
+<td>78.464094</td>
+<td>100.010050</td>
 </tr>
 </tbody>
 </table>
@@ -3274,14 +3275,14 @@ dtype: bool</code></pre>
 </div>
 <p>The <em>keep</em> parameter determines which of the duplicates to mark as <code>True</code>. The default is <code>first</code>, which marks the first occurrence of the duplicate as <code>False</code> and the subsequent occurrences as <code>True</code>. Setting <em>keep</em> to <code>last</code> will mark the last occurrence as <code>False</code> and the previous occurrences as <code>True</code>.</p>
 <p>This helps to remove <strong>exact duplicates</strong> from a data file:</p>
-<div class="cell" data-execution_count="64">
+<div class="cell" data-execution_count="72">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>collars_no_dups <span class="op">=</span> collars[collars.duplicated(keep <span class="op">=</span> <span class="st">&#39;first&#39;</span>) <span class="op">==</span> <span class="va">False</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The <em>pandas</em> method <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html#pandas.Series.drop_duplicates"><code>drop_duplicates()</code></a> will remove all the duplicates without the need to filter the data frame.</p>
-<div class="cell" data-execution_count="65">
+<div class="cell" data-execution_count="73">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>collars <span class="op">=</span> collars.drop_duplicates(keep <span class="op">=</span> <span class="st">&#39;first&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3293,7 +3294,7 @@ dtype: bool</code></pre>
 <p>Partial duplicates are rows that are identical in some columns but not all. These could occur when one or more of the coordinates in a record are changed without deleting the original record.</p>
 <p>These holes will not be flagged as duplicated using the <code>duplicated()</code> method as implemented above. The <strong>subset</strong> parameter must be used to specify the columns to consider when identifying duplicates:</p>
 <p>In the example below the <em>bhid</em>, <em>x</em>, and <em>y</em> values are the same but the <em>z</em> coordinate differs. Note the subset parameter: it is list of the columns that must be the same in two or more records for them to be considered duplicates.</p>
-<div class="cell" data-execution_count="66">
+<div class="cell" data-execution_count="74">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>dups <span class="op">=</span> collars.duplicated(subset <span class="op">=</span> [<span class="st">&#39;dhid&#39;</span>,<span class="st">&#39;x&#39;</span>,<span class="st">&#39;y&#39;</span>],keep <span class="op">=</span> <span class="va">False</span>)</span>
@@ -3316,74 +3317,74 @@ dtype: bool</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">101</td>
-<td>DH-102</td>
-<td>20.0</td>
-<td>90.0</td>
-<td>84.0</td>
+<td data-quarto-table-cell-role="th">106</td>
+<td>DH-107</td>
+<td>70.914712</td>
+<td>89.471938</td>
+<td>104.296403</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">127</td>
-<td>DH-102</td>
-<td>20.0</td>
-<td>90.0</td>
-<td>85.0</td>
+<td>DH-107</td>
+<td>70.914712</td>
+<td>89.471938</td>
+<td>105.296403</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">11</td>
-<td>DH-12</td>
-<td>0.0</td>
-<td>10.0</td>
-<td>86.0</td>
+<td data-quarto-table-cell-role="th">27</td>
+<td>DH-28</td>
+<td>49.208602</td>
+<td>19.620317</td>
+<td>97.498452</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">128</td>
-<td>DH-12</td>
-<td>0.0</td>
-<td>10.0</td>
-<td>87.0</td>
+<td>DH-28</td>
+<td>49.208602</td>
+<td>19.620317</td>
+<td>98.498452</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">12</td>
-<td>DH-13</td>
-<td>10.0</td>
-<td>10.0</td>
-<td>84.0</td>
+<td data-quarto-table-cell-role="th">35</td>
+<td>DH-36</td>
+<td>18.694472</td>
+<td>29.944372</td>
+<td>114.207091</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">129</td>
-<td>DH-13</td>
-<td>10.0</td>
-<td>10.0</td>
-<td>85.0</td>
+<td>DH-36</td>
+<td>18.694472</td>
+<td>29.944372</td>
+<td>115.207091</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">32</td>
-<td>DH-33</td>
-<td>100.0</td>
-<td>20.0</td>
-<td>88.0</td>
+<td data-quarto-table-cell-role="th">37</td>
+<td>DH-38</td>
+<td>39.857632</td>
+<td>30.420612</td>
+<td>110.844214</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">130</td>
-<td>DH-33</td>
-<td>100.0</td>
-<td>20.0</td>
-<td>89.0</td>
+<td>DH-38</td>
+<td>39.857632</td>
+<td>30.420612</td>
+<td>111.844214</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">82</td>
-<td>DH-83</td>
-<td>50.0</td>
-<td>70.0</td>
-<td>84.0</td>
+<td data-quarto-table-cell-role="th">62</td>
+<td>DH-63</td>
+<td>70.043470</td>
+<td>50.552525</td>
+<td>95.426700</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">126</td>
-<td>DH-83</td>
-<td>50.0</td>
-<td>70.0</td>
-<td>85.0</td>
+<td>DH-63</td>
+<td>70.043470</td>
+<td>50.552525</td>
+<td>96.426700</td>
 </tr>
 </tbody>
 </table>
@@ -3396,7 +3397,7 @@ dtype: bool</code></pre>
 * dhid, x and y are the same but z is different * dhid, x and z are the same but y is different * dhid, y and z are the same but x is different * x,y and z are the same but dhid is different</p>
 <p>Deleting the duplicate records are a bit more involved. I keep track of the index number of the erroneous records and then use the <code>.drop()</code> method to remove them from the original data frame.</p>
 <p>For example, in the table above records with index numbers 101, 128, 12, 130 and 82 are wrong and must be removed:</p>
-<div class="cell" data-execution_count="67">
+<div class="cell" data-execution_count="75">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>collars <span class="op">=</span>collars.drop(index <span class="op">=</span>[<span class="dv">101</span>, <span class="dv">128</span>, <span class="dv">12</span>, <span class="dv">130</span>, <span class="dv">82</span>])</span>
@@ -3421,12 +3422,58 @@ dtype: bool</code></pre>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">106</td>
+<td>DH-107</td>
+<td>70.914712</td>
+<td>89.471938</td>
+<td>104.296403</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">127</td>
+<td>DH-107</td>
+<td>70.914712</td>
+<td>89.471938</td>
+<td>105.296403</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35</td>
+<td>DH-36</td>
+<td>18.694472</td>
+<td>29.944372</td>
+<td>114.207091</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">129</td>
+<td>DH-36</td>
+<td>18.694472</td>
+<td>29.944372</td>
+<td>115.207091</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">62</td>
+<td>DH-63</td>
+<td>70.043470</td>
+<td>50.552525</td>
+<td>95.426700</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">126</td>
+<td>DH-63</td>
+<td>70.043470</td>
+<td>50.552525</td>
+<td>96.426700</td>
+</tr>
 </tbody>
 </table>
 
 </div>
 </div>
 </div>
+</section>
+<section id="close-collars" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Close Collars</h1>
+<p>When validating a collar dataset it is worthwhile checking for drill hole collars which lie (uncomfortably) close to one another.</p>
 </section>
 
 </main>
