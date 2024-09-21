@@ -3079,7 +3079,7 @@ vertical-align: -.125em;
 <li>partial duplicates</li>
 <li>and ‘near’ duplicates</li>
 </ul>
-<div class="cell" data-execution_count="168">
+<div class="cell" data-execution_count="1">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import libraries</span></span>
@@ -3154,7 +3154,7 @@ vertical-align: -.125em;
 <h1 data-number="1"><span class="header-section-number">1</span> Exact Duplicates</h1>
 <p>Exact duplicates are rows that are identical in all columns.</p>
 <p>These are easily identified using the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html"><code>duplicated()</code></a> method in <code>pandas</code>:</p>
-<div class="cell" data-execution_count="169">
+<div class="cell" data-execution_count="2">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Find exact duplicates</span></span>
@@ -3162,12 +3162,12 @@ vertical-align: -.125em;
 </details>
 </div>
 <p>The method returns a series of boolean values, where <code>True</code> indicates that the row is one member of a duplicate pair.</p>
-<div class="cell" data-execution_count="170">
+<div class="cell" data-execution_count="3">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>dups.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="170">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>0    False
 1    False
 2    False
@@ -3177,7 +3177,7 @@ dtype: bool</code></pre>
 </div>
 </div>
 <p>This series can then be used to filter the original data frame to show only the duplicate rows.</p>
-<div class="cell" data-execution_count="171">
+<div class="cell" data-execution_count="4">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>duplicates <span class="op">=</span> collars[dups].sort_values(by <span class="op">=</span> <span class="st">&#39;dhid&#39;</span>)</span>
@@ -3276,14 +3276,14 @@ dtype: bool</code></pre>
 </div>
 <p>The <em>keep</em> parameter determines which of the duplicates to mark as <code>True</code>. The default is <code>first</code>, which marks the first occurrence of the duplicate as <code>False</code> and the subsequent occurrences as <code>True</code>. Setting <em>keep</em> to <code>last</code> will mark the last occurrence as <code>False</code> and the previous occurrences as <code>True</code>.</p>
 <p>This helps to remove <strong>exact duplicates</strong> from a data file:</p>
-<div class="cell" data-execution_count="172">
+<div class="cell" data-execution_count="5">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>collars_no_dups <span class="op">=</span> collars[collars.duplicated(keep <span class="op">=</span> <span class="st">&#39;first&#39;</span>) <span class="op">==</span> <span class="va">False</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The <em>pandas</em> method <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html#pandas.Series.drop_duplicates"><code>drop_duplicates()</code></a> will remove all the duplicates without the need to filter the data frame.</p>
-<div class="cell" data-execution_count="173">
+<div class="cell" data-execution_count="6">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>collars <span class="op">=</span> collars.drop_duplicates(keep <span class="op">=</span> <span class="st">&#39;first&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3295,7 +3295,7 @@ dtype: bool</code></pre>
 <p>Partial duplicates are rows that are identical in some columns but not all. These could occur when one or more of the coordinates in a record are changed without deleting the original record.</p>
 <p>These holes will not be flagged as duplicated using the <code>duplicated()</code> method as implemented above. The <strong>subset</strong> parameter must be used to specify the columns to consider when identifying duplicates:</p>
 <p>In the example below the <em>bhid</em>, <em>x</em>, and <em>y</em> values are the same but the <em>z</em> coordinate differs. Note the subset parameter: it is list of the columns that must be the same in two or more records for them to be considered duplicates.</p>
-<div class="cell" data-execution_count="174">
+<div class="cell" data-execution_count="7">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>dups <span class="op">=</span> collars.duplicated(subset <span class="op">=</span> [<span class="st">&#39;dhid&#39;</span>,<span class="st">&#39;x&#39;</span>,<span class="st">&#39;y&#39;</span>],keep <span class="op">=</span> <span class="va">False</span>)</span>
@@ -3395,10 +3395,13 @@ dtype: bool</code></pre>
 </div>
 <p>The data frame can now be exported and the correct coordinates identified. Make sure you use the <strong>keep = False</strong> parameter as one does not know which of the duplicates is the correct one.</p>
 <p>Remember to check all the possible combinations:<br>
-* dhid, x and y are the same but z is different * dhid, x and z are the same but y is different * dhid, y and z are the same but x is different * x,y and z are the same but dhid is different</p>
+* dhid, x and y are the same but z is different<br>
+* dhid, x and z are the same but y is different<br>
+* dhid, y and z are the same but x is different<br>
+* x,y and z are the same but dhid is different</p>
 <p>Deleting the duplicate records are a bit more involved. I keep track of the index number of the erroneous records and then use the <code>.drop()</code> method to remove them from the original data frame.</p>
 <p>For example, in the table above records with index numbers 101, 128, 12, 130 and 82 are wrong and must be removed:</p>
-<div class="cell" data-execution_count="175">
+<div class="cell" data-execution_count="8">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>collars <span class="op">=</span>collars.drop(index <span class="op">=</span>[<span class="dv">101</span>, <span class="dv">128</span>, <span class="dv">12</span>, <span class="dv">130</span>, <span class="dv">82</span>])</span>
@@ -3478,7 +3481,7 @@ dtype: bool</code></pre>
 <p>This can be done by looping through the collar data twice, i.e. loop through the collars and determine the distance between each collar and all the other collars (the second loop). If the distance is less than a certain threshold, the two collars are considered to be too close to one another. This could be rather time consuming for a large number of collars.</p>
 <p>A more efficient way is to use the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.KDTree.html"><code>KDTree</code></a> class in the <code>scipy.spatial</code> library. The <code>KDTree</code> class is a data structure for quick nearest-neighbor lookup. It is a binary tree structure that is used to partition the space in such a way that it is easy to find the nearest neighbors.</p>
 <p>First, we need to import the <code>scipy.spatial</code> library:</p>
-<div class="cell" data-execution_count="176">
+<div class="cell" data-execution_count="9">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> scipy.spatial <span class="im">import</span> KDTree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3489,7 +3492,7 @@ dtype: bool</code></pre>
 <p>ModuleNotFoundError: No module named ‘scipy’</p>
 </blockquote>
 <p>you can install the library by running the following command in your terminal: <em>pip install scipy</em></p>
-<div class="cell" data-execution_count="177">
+<div class="cell" data-execution_count="10">
 <details open>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># KDTree is initialized with the coordinates</span></span>
