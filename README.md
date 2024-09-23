@@ -6,5 +6,16 @@
 
 This repository contains code snippits I use. I do hope you my find some of these helpful, please feel free to copy, use, critique and improve as you see fit.
 
-## [Duplicates.ipynb](https://erebus-mre.github.io/Geostats_Code/01_Data_Validation/duplicates.html)
+## Datasets
+
+## 01_Data_Validation
+
+### [Duplicates.ipynb](https://erebus-mre.github.io/Geostats_Code/01_Data_Validation/duplicates.html)
 This notebook demonstrates how to locate duplicate records in a collars file using Python, pandas ans scipy. 
+
+## 02_EDA
+
+## 03_Domaining
+
+## 04_Estimation
+### 01_QKNA
