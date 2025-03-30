@@ -1,0 +1,24 @@
+              Parameters for GAMV2004
+              ***********************
+
+START OF PARAMETERS:
+samples.dat               -file with data
+1   2   3                         -   columns for X, Y, Z coordinates
+1   5   4                         -   number of variables,column numbers
+60     1.0e21                -   trimming limits
+gamv.out                          -file for variogram output
+5                                 -number of directions
+0. 22.5 2000.    0. 90. 20.       -Dir 01: azm,atol,bandh,dip,dtol,bandv
+15  40.0 30.0                     -        nlag,xlag,xtol
+45. 22.5 2000.    0. 90. 20.      -Dir 01: azm,atol,bandh,dip,dtol,bandv
+15  40.0 30.0                     -        nlag,xlag,xtol
+90. 22.5 2000.    0. 90. 20.      -Dir 01: azm,atol,bandh,dip,dtol,bandv
+15  40.0 30.0                     -        nlag,xlag,xtol
+135. 22.5 2000.    0. 90. 20.     -Dir 01: azm,atol,bandh,dip,dtol,bandv
+15  40.0 30.0                     -        nlag,xlag,xtol
+0. 90 999.    90. 20. 20.    -Dir 01: azm,atol,bandh,dip,dtol,bandv
+25  1 0.5                        -        nlag,xlag,xtol
+0                                 -standardize sills? (0=no, 1=yes)
+1                                 -number of variograms
+1   1   1                         -tail var., head var., variogram type
+

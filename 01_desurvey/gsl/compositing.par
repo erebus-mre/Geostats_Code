@@ -1,0 +1,34 @@
+       Parameters for Compositing
+       **************************
+       
+START OF PARAMETERS:
+assay.gsl                       -file with assay data
+4 1 2                             -  colums for ID, FROM, TO 
+1                                 -  number of variables (n)
+3                                -  columns for variables Var1, Var2, ..., Varn
+0 0                               -  0 - continuous or 1 - categorical
+-998  1e+21                          -  trimming limits
+0                                 -cut continuous based on categorical? (0=no,1=yes)
+3 0.2                             -composite target size and minimum size frac.
+1.0                               -minimum non-null data frac
+assay_comps.gsl                       -output file
+
+Notes
+1) If categorical variables are used the composite is defined by the category 
+   with the highest proportion.
+2) Continuous variables can be cut by a single categorical variable. Meaning
+   that composites will not cross different categories, restarting a new composite
+   when a new category is encountered. Only one category can be present if using
+   this option, and it must be the first specified variable.
+3) Composites less than the minimum composite size fraction will be removed from the  
+   output. A composite size that is less than the target size is caused by categorical 
+   cutting, or the end of a drillhole. For example, if a minimum size frac of 0.2
+   is specified with a target composite size of 3m, samples with a size less than 0.6m
+   will be excluded from the output.
+4) Data out of trimming bounds (null) causes the respective composite to be
+   assigned as null unless the non-null data fraction exceeds the minimum requirement
+   parameter. For example if 0.75 is specified as the minimum requirement and 
+   0.2 of the composite interval is composed of null data values, the composite 
+   will have a non-null value based on the data that comprise 0.8 of its length. 
+   If the minimum requirement is specified as 0.3, that same composite interval would 
+   be null.

@@ -1,0 +1,16 @@
+         Parameters for dir2car
+         **********************
+
+START OF PARAMETERS
+assay_comps.gsl                      - file with composited assay
+1  2                                 - colums for ID and MD
+1                                    - number of variables
+4                                    - colums for variables
+0   c                                 - 0 - continuous or 1 - categorical
+-1  1e21                             - trimming limits
+collars.gsl                          - file with collar coordinates
+4   1  2  3                             - colums for ID, X, Y and Z
+survey.gsl                           - file with directional survey data
+4 1 3 2                              - colums for ID, MD, DIP and AZM (negative if Inclination instead of Dip)
+composites.gsl                       - file for cartesian data output
+survey_stations.gsl                  - file for dh path (location of survey stations)

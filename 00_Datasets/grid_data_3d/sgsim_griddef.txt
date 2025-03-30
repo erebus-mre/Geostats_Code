@@ -1,0 +1,3 @@
+50   0.5    1.0               -nx,xmn,xsiz
+40   0.5    1.0               -ny,ymn,ysiz
+30   0.0    0.5               -nz,zmn,zsiz

@@ -1,0 +1,19 @@
+
+                  Parameters for VMODEL
+                  *********************
+
+START OF PARAMETERS:
+./working/vmodel.out                     -file for variogram output
+5   40                         -number of directions and lags
+0.0     0.0    20              -azm, dip, lag distance
+45.0    0.0    20              -azm, dip, lag distance
+90.0    0.0    20              -azm, dip, lag distance
+135.0   0.0    20              -azm, dip, lag distance
+90.0    0.0    1               -azm, dip, lag distance
+
+2    1.353                               -  nst, nugget effect
+2    0.833 123.7   0.0   0.0             -  it,cc,ang1,ang2,ang3
+        31.975       34.715       28.321 -  a_hmax,a_hmin,a_vert
+2    0.479 123.7   0.0   0.0             -  it,cc,ang1,ang2,ang3
+       289.290      216.450      106.790 -  a_hmax,a_hmin,a_vert
+

@@ -1,0 +1,21 @@
+
+                  Parameters for GAMV
+                  *******************
+
+START OF PARAMETERS:
+./working/samples.dat                      -file with data
+1   2   3                         -   columns for X, Y, Z coordinates
+1   5   4                         -   number of variables,col numbers
+60     1.0e21                -   trimming limits
+./working/gamv_hz.out                          -file for variogram output
+20                                -number of lags
+40.0                               -lag separation distance
+40.0                               -lag tolerance
+4                                 -number of directions
+0.0    22.5 400.0   0.0  60.0  10.0  -azm,atol,bandh,dip,dtol,bandv
+45.0   22.5 400.0   0.0  60.0  10.0  -azm,atol,bandh,dip,dtol,bandv
+90.0   22.5 400.0   0.0  60.0  10.0  -azm,atol,bandh,dip,dtol,bandv
+135.0  22.5 400.0   0.0  60.0  10.0  -azm,atol,bandh,dip,dtol,bandv
+0                                 -standardize sills? (0=no, 1=yes)
+1                                 -number of variograms
+1   1   1                         -tail var., head var., variogram type

@@ -1,0 +1,354 @@
+
+ VARFIT Version: 2.600
+
+ Which parameter file do you want to use?
+  reading main parameters
+  number of variagrams =            5
+  number of nested structures =            2
+  constant angle between structures
+  inverse distance weighting =            1
+  number of pairs weighting =            0
+  minimum number of pairs =           10
+  PostScript file = varfit.ps                               
+  Variogram file = varfit.var                              
+  Project title = 3D Semivariogram                        
+  reading variogram parameters
+   variogram file     1 = gamv.out                                
+   variogram number in file =     1
+   variogram file     2 = gamv.out                                
+   variogram number in file =     2
+   variogram file     3 = gamv.out                                
+   variogram number in file =     3
+   variogram file     4 = gamv.out                                
+   variogram number in file =     4
+   variogram file     5 = gamv.out                                
+   variogram number in file =     5
+  reading advanced parameters
+  zonal anisotropy =            0           0           0
+  cyclicity =            0           0           0
+  do not fix sill
+  do not fix nugget effect
+  fix structure type =            2
+  variogram structure            1  =            2
+  variogram structure            2  =            2
+  fix maximum range =            0
+  fix minimum range =            0
+  fix vertical range =            0
+  fix azimuth angle =            0
+  fix dip angle =            1
+  variogram structure            1  dip angle =   0.0000000E+00
+  fix plunge angle =            1
+  variogram structure            1  plunge angle =   0.0000000E+00
+  number of variogram prefences =            0
+  H-V anisotropy =            0   10.00000    
+  H-H anisotropy =            0   1.000000    
+ There were   16 points in variogram    1
+ There were   16 points in variogram    2
+ There were   16 points in variogram    3
+ There were   16 points in variogram    4
+ There were   25 points in variogram    5
+ 
+ Starting first stage optimization process
+ 
+   finished   0.00% of the first stage optimization
+   finished   8.33% of the first stage optimization
+   finished  16.67% of the first stage optimization
+   finished  25.00% of the first stage optimization
+   finished  33.33% of the first stage optimization
+   finished  41.67% of the first stage optimization
+   finished  50.00% of the first stage optimization
+   finished  58.33% of the first stage optimization
+   finished  66.67% of the first stage optimization
+   finished  75.00% of the first stage optimization
+   finished  83.33% of the first stage optimization
+   finished  91.67% of the first stage optimization
+   finished 100.00% of the first stage optimization
+ 
+ Starting second stage optimization process
+ 
+   finished   1000 iterations,  objective at 98.93% of first stage
+   finished   2000 iterations,  objective at 98.93% of first stage
+
+ VMODEL Version: 3.000
+
+  output file = .temp_vmod                              
+  ndir,nlag =            1         500
+  azm, dip, lag =   0.0000000E+00  0.0000000E+00   1.408500    
+  x,y,z offsets =   0.0000000E+00   1.408500      0.0000000E+00
+ 
+  nst, c0 =            2   1.353000    
+  it,cc,ang[1,2,3] =             2  0.8327000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    31.98000       34.72000       28.32000    
+  anis 1 2 =    1.085679      0.8855535    
+  it,cc,ang[1,2,3] =             2  0.4794000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    289.3000       216.5000       106.8000    
+  anis 1 2 =   0.7483581      0.3691670    
+
+ VMODEL Version: 3.000 Finished
+
+
+ VARGPLT Version: 3.001
+
+  output file = .temp_h1                                
+  number of variograms =            2
+  distance limits =   0.0000000E+00   704.2668    
+  variogram limits =   0.0000000E+00   3.464000    
+  plot sill, sill value =            1   2.664600    
+  title = Azimuth:    0  Dip:    0                          
+  data file            1  = gamv.out                                
+  parameters            1           0           1           0          10
+  data file            2  = .temp_vmod                              
+  parameters            1           0           0           1          10
+  text file varfit.var                              
+  variogram number =            1
+  working on variogram            1
+  trying to open       gamv.out                                
+  opened               gamv.out                                
+  working on variogram            2
+  trying to open       .temp_vmod                              
+  opened               .temp_vmod                              
+  trying to open varfit.var                              
+
+ VARGPLT Version: 3.001 Finished
+
+
+ VMODEL Version: 3.000
+
+  output file = .temp_vmod                              
+  ndir,nlag =            1         500
+  azm, dip, lag =    45.00000      0.0000000E+00   1.423400    
+  x,y,z offsets =    1.006496       1.006496      0.0000000E+00
+ 
+  nst, c0 =            2   1.353000    
+  it,cc,ang[1,2,3] =             2  0.8327000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    31.98000       34.72000       28.32000    
+  anis 1 2 =    1.085679      0.8855535    
+  it,cc,ang[1,2,3] =             2  0.4794000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    289.3000       216.5000       106.8000    
+  anis 1 2 =   0.7483581      0.3691670    
+
+ VMODEL Version: 3.000 Finished
+
+
+ VARGPLT Version: 3.001
+
+  output file = .temp_h2                                
+  number of variograms =            2
+  distance limits =   0.0000000E+00   711.7152    
+  variogram limits =   0.0000000E+00   3.464000    
+  plot sill, sill value =            1   2.664600    
+  title = Azimuth:   45  Dip:    0                          
+  data file            1  = gamv.out                                
+  parameters            2           0           1           0          10
+  data file            2  = .temp_vmod                              
+  parameters            1           0           0           1          10
+  text file varfit.var                              
+  variogram number =            1
+  working on variogram            1
+  trying to open       gamv.out                                
+  opened               gamv.out                                
+  working on variogram            2
+  trying to open       .temp_vmod                              
+  opened               .temp_vmod                              
+  trying to open varfit.var                              
+
+ VARGPLT Version: 3.001 Finished
+
+
+ VMODEL Version: 3.000
+
+  output file = .temp_vmod                              
+  ndir,nlag =            1         500
+  azm, dip, lag =    90.00000      0.0000000E+00   1.408300    
+  x,y,z offsets =    1.408300      1.7136145E-08  0.0000000E+00
+ 
+  nst, c0 =            2   1.353000    
+  it,cc,ang[1,2,3] =             2  0.8327000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    31.98000       34.72000       28.32000    
+  anis 1 2 =    1.085679      0.8855535    
+  it,cc,ang[1,2,3] =             2  0.4794000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    289.3000       216.5000       106.8000    
+  anis 1 2 =   0.7483581      0.3691670    
+
+ VMODEL Version: 3.000 Finished
+
+
+ VARGPLT Version: 3.001
+
+  output file = .temp_h3                                
+  number of variograms =            2
+  distance limits =   0.0000000E+00   704.1480    
+  variogram limits =   0.0000000E+00   3.464000    
+  plot sill, sill value =            1   2.664600    
+  title = Azimuth:   90  Dip:    0                          
+  data file            1  = gamv.out                                
+  parameters            3           0           1           0          10
+  data file            2  = .temp_vmod                              
+  parameters            1           0           0           1          10
+  text file varfit.var                              
+  variogram number =            1
+  working on variogram            1
+  trying to open       gamv.out                                
+  opened               gamv.out                                
+  working on variogram            2
+  trying to open       .temp_vmod                              
+  opened               .temp_vmod                              
+  trying to open varfit.var                              
+
+ VARGPLT Version: 3.001 Finished
+
+
+ PLOTEM Version: 2.001
+
+  number of plots in x and y =            1           3
+  output file = .temp_h1                                
+  output file = .temp_h2                                
+  output file = .temp_h3                                
+  title = 3D Semivariogram                        
+  title2 =                                         
+  varfile = File:  varfit.var                       
+  pagenum = Page:  1 of  2                          
+  creation = Created:  13:48 Sep 26, 2024            
+ 
+  working on ix =            1  iy =            3
+  working on ix =            1  iy =            2
+  working on ix =            1  iy =            1
+
+ PLOTEM Version: 2.001 Finished
+
+
+ VMODEL Version: 3.000
+
+  output file = .temp_vmod                              
+  ndir,nlag =            1         500
+  azm, dip, lag =    135.0000      0.0000000E+00   1.423400    
+  x,y,z offsets =    1.006496      -1.006496      0.0000000E+00
+ 
+  nst, c0 =            2   1.353000    
+  it,cc,ang[1,2,3] =             2  0.8327000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    31.98000       34.72000       28.32000    
+  anis 1 2 =    1.085679      0.8855535    
+  it,cc,ang[1,2,3] =             2  0.4794000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    289.3000       216.5000       106.8000    
+  anis 1 2 =   0.7483581      0.3691670    
+
+ VMODEL Version: 3.000 Finished
+
+
+ VARGPLT Version: 3.001
+
+  output file = .temp_h1                                
+  number of variograms =            2
+  distance limits =   0.0000000E+00   711.7104    
+  variogram limits =   0.0000000E+00   3.464000    
+  plot sill, sill value =            1   2.664600    
+  title = Azimuth:  135  Dip:    0                          
+  data file            1  = gamv.out                                
+  parameters            4           0           1           0          10
+  data file            2  = .temp_vmod                              
+  parameters            1           0           0           1          10
+  text file varfit.var                              
+  variogram number =            1
+  working on variogram            1
+  trying to open       gamv.out                                
+  opened               gamv.out                                
+  working on variogram            2
+  trying to open       .temp_vmod                              
+  opened               .temp_vmod                              
+  trying to open varfit.var                              
+
+ VARGPLT Version: 3.001 Finished
+
+
+ VMODEL Version: 3.000
+
+  output file = .temp_vmod                              
+  ndir,nlag =            1         500
+  azm, dip, lag =   0.0000000E+00   90.00000      5.9999999E-02
+  x,y,z offsets =   0.0000000E+00  7.3007783E-10  5.9999999E-02
+ 
+  nst, c0 =            2   1.353000    
+  it,cc,ang[1,2,3] =             2  0.8327000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    31.98000       34.72000       28.32000    
+  anis 1 2 =    1.085679      0.8855535    
+  it,cc,ang[1,2,3] =             2  0.4794000       123.7000      0.0000000E+00
+  0.0000000E+00
+  a1 a2 a3 =    289.3000       216.5000       106.8000    
+  anis 1 2 =   0.7483581      0.3691670    
+
+ VMODEL Version: 3.000 Finished
+
+
+ VARGPLT Version: 3.001
+
+  output file = .temp_h2                                
+  number of variograms =            2
+  distance limits =   0.0000000E+00   30.00000    
+  variogram limits =   0.0000000E+00   3.464000    
+  plot sill, sill value =            1   2.664600    
+  title = Azimuth:    0  Dip:   90                          
+  data file            1  = gamv.out                                
+  parameters            5           0           1           0          10
+  data file            2  = .temp_vmod                              
+  parameters            1           0           0           1          10
+  text file varfit.var                              
+  variogram number =            1
+  working on variogram            1
+  trying to open       gamv.out                                
+  opened               gamv.out                                
+  working on variogram            2
+  trying to open       .temp_vmod                              
+  opened               .temp_vmod                              
+  trying to open varfit.var                              
+
+ VARGPLT Version: 3.001 Finished
+
+
+ PLOTEM Version: 2.001
+
+  number of plots in x and y =            1           3
+  output file = .temp_h1                                
+  output file = .temp_h2                                
+  output file =                                         
+  title = 3D Semivariogram                        
+  title2 =                                         
+  varfile = File:  varfit.var                       
+  pagenum = Page:  2 of  2                          
+  creation = Created:  13:48 Sep 26, 2024            
+ 
+  working on ix =            1  iy =            3
+  working on ix =            1  iy =            2
+  working on ix =            1  iy =            1
+
+ PLOTEM Version: 2.001 Finished
+
+ 
+ Fitted Model:
+  Number of variograms =  5
+  Number of structures =  2
+  Structure    =  1
+    type       =  2
+    Range-hmax =       31.975
+    Range-hmin =       34.715
+    Range-vert =       28.321
+  Structure    =  2
+    type       =  2
+    Range-hmax =      289.290
+    Range-hmin =      216.450
+    Range-vert =      106.790
+ Variogram variance contributions:
+    nugget effect =  1.353
+    structure 1 variance =      0.833
+    structure 2 variance =      0.479
+
+ VARFIT Version: 2.600 Finished
+

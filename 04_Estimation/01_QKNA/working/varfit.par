@@ -1,0 +1,62 @@
+                  Parameters for VARFIT
+                  *********************
+
+
+START OF MAIN PARAMETERS:
+5                          -number of variograms
+2                          -number of nested structures
+1                          -constant angle between structures
+1                          -inverse distance weighting (0=no, 1=yes)
+0                          -number of pairs weighting (0=no, 1=yes)
+10                         -minimum number of pairs to use
+varfit.ps                  -file for PostScript output
+varfit.var                 -file for variogram model
+3D Semivariogram           -project title
+
+
+START OF VARIOGRAMS SPECIFICATION:
+gamv.out                 -variogram #1 file
+   1                       -   variogram number in file
+gamv.out                 -variogram #1 file
+   2                       -   variogram number in file
+gamv.out                 -variogram #1 file
+   3                       -   variogram number in file
+gamv.out                 -variogram #1 file
+   4                       -   variogram number in file
+gamv.out                 -variogram #1 file
+   5                       -   variogram number in file
+
+
+START OF ADVANCED OPTIONS:
+0    0    0                -zonal Anis: Hmax, Hmin, Vert (0=no, 1=yes)
+0    0    0                -cyclicity:  Hmax, Hmin, Vert (0=no, 1=yes)
+0   1.0                    -fix sill
+0   0.1                    -fix nugget effect
+2                          -number of structure types to fix
+1 2
+2 2
+0                          -number of Hmax ranges to fix
+0                          -number of Hmin ranges to fix
+0                          -number of Vert ranges to fix
+0                          -number of azimuth angles to fix
+1                         -number of dip angles to fix
+1 0
+1                         -number of plunge angles to fix
+1 0
+0                          -number of variogram preferences
+0     10.0                 -fix Hmax/Vert anis. (0=no, 1=yes)
+0      1.0                 -fix Hmin/Hmax anis. (0=no, 1=yes)
+
+
+Insert the required lines (from below) for the options chosen
+above (must be placed below the option flag).  Some parameters
+can be fixed for each structure (range) while
+others (hmax, hmin, hvert, anisotropy) are fixed for all structures
+1  2                       -   structure number and structure type
+1  1000                    -   structure number and Hmax range
+1   200                    -   structure number and Hmin range
+1    10                    -   structure number and Vert range
+1    45                    -   structure number and azimuth angle
+1    -30                   -   structure number and dip angle
+1     30                   -   structure number and plunge angle
+1     5                    -   variogram number, and scale factor for preference
